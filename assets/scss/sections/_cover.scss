@@ -1,0 +1,74 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.cover {
+    .content {
+        // background: url('../../assets/images/bg/hero_bg.jpg') no-repeat center/cover;
+        background-color: $primary-color;
+        width: 100%;
+        aspect-ratio: 500 / 822;
+        @include flex-center;
+        flex-direction: column;
+        color: #fff;
+
+        .names {
+            font-family: $font-hero;
+            font-size: 40px;
+            font-weight: normal;
+        }
+
+        .photo-frame {
+            max-width: 210px;
+            width: 100%;
+            aspect-ratio: 2 / 2.5;
+            perspective: 1000px;
+            background-color: #553d14bd;
+            margin: 5% 0;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .subtext {
+            font-family: $font-hero;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        .divider {
+            margin: 1% 0;
+        }
+
+        .divider .divider-icon {
+            max-width: 74px;
+            width: 100%;
+            height: auto;
+        }
+
+        .divider img.bottom {
+            transform: rotateX(180deg);
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .names {
+                font-size: calc((40 / 500) * 100vw);
+            }
+    
+            .photo-frame {
+                max-width: calc((210 / 500) * 100vw);
+            }
+    
+            .subtext {
+                font-size: calc((20 / 500) * 100vw);
+            }
+    
+            .divider .divider-icon {
+                max-width: calc((74 / 500) * 100vw);
+            }
+        }
+    }
+}
