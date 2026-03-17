@@ -692,7 +692,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 35px 0;
+  padding: 7% 0;
 }
 .couple-photo .container-photo {
   width: 100%;
@@ -718,18 +718,9 @@ section {
   width: 116px;
   height: auto;
 }
-@media (max-width: 430px) {
-  .couple-photo {
-    padding: 0;
-  }
-  .couple-photo .container-photo img {
-    width: 85%;
-  }
-  .couple-photo .container-photo .overlay {
-    bottom: 80px;
-  }
-  .couple-photo .container-photo .overlay img {
-    width: 100px;
+@media (max-width: 500px) {
+  .couple-photo .container-photo {
+    max-width: 59.4vw;
   }
 }
 
