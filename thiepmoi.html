@@ -82,9 +82,9 @@
               class="couple-photo" />
           </div>
           <div class="invitation-text announcement" data-aos="fade-in">
-            <p>TRÂN TRỌNG KÍNH MỜI ANH/CHỊ/BẠN</p>
-            <p>DÀNH THỜI GIAN QUÝ GIÁ ĐẾN THAM DỰ LỄ VU QUY</p>
-            <p>CỦA GIA TÚ VÀ NGỌC ANH VÀO LÚC:</p>
+            <p>Trân trọng kính mời quý cô chú, bác, anh chị, và bạn bè</p>
+            <p>dành thời gian quý giá đến tham dự lễ thành hôn</p>
+            <p>CỦA MINH NHẬT VÀ CẨM TÚ VÀO LÚC:</p>
           </div>
           <div class="time">
             <h2 class="time-date" data-aos="fade-down">CHỦ NHẬT | 18:00 | 25.04.2026</h2>
@@ -112,8 +112,8 @@
       <div class="gallery-grid">
         <div class="row1">
           <div class="column column1">
-            <div class="photo-box">
-              <img class="photo" data-aos="flip-right" src="" alt="" />
+            <div class="photo-box" data-aos="flip-right">
+              <img class="photo" src="" alt="" />
             </div>
           </div>
           <div class="column column2">
@@ -140,8 +140,8 @@
           </div>
           <div class="column column2">
             <div class="row column2_row1">
-              <div class="photo-box">
-                <img class="photo" data-aos="flip-down" data-aos-delay="600" src="" alt="" />
+              <div class="photo-box" data-aos="flip-down" data-aos-delay="600">
+                <img class="photo" src="" alt="" />
               </div>
             </div>
             <div class="row column2_row2">
@@ -330,8 +330,8 @@
       <h2 class="title" data-aos="fade-down">Xác nhận tham dự</h2>
       <div class="divider">✦</div>
       <p class="info-text" data-aos="fade-right">
-        Kính mong quý cô chú, bác, anh chị, và bạn bè vui lòng xác nhận tham dự <strong> trước ngày 01.04</strong>
-          để để buổi lễ được chuẩn bị chu đáo!
+          Kính mong quý cô chú, bác, anh chị, và bạn bè vui lòng xác nhận
+          tham dự <strong> trước ngày 01.04</strong> để buổi lễ được chuẩn bị chu đáo.
       </p>
       <form id="rsvpForm">
         <div class="label-confirm">Bạn xác nhận tham dự lễ cưới:</div>
@@ -347,9 +347,24 @@
             <input type="text" placeholder="Tên Khách Mời" name="name" required>
         </div>
 
-        <div class="form-group" data-aos="fade-right" data-aos-delay="400">
+        <!-- <div class="form-group" data-aos="fade-right" data-aos-delay="400">
             <input type="text" placeholder="Số Người Đi Kèm"  name="guest_number">
+        </div> -->
+
+        <div class="form-group fade-in guest_number">
+          <select class="form-select" name="guest_number" data-lang="vi">
+            <option value="" disabled selected>
+              Bạn sẽ tham dự cùng bao nhiêu người?
+            </option>
+            <option value="0">Đi một mình</option>
+            <option value="1">1 người</option>
+            <option value="2">2 người</option>
+            <option value="3">3 người</option>
+            <option value="4">4 người</option>
+            <option value="5">5 người</option>
+          </select>
         </div>
+        <div id="guest-fields"></div>
 
         <div class="label-confirm">Bạn thuộc:</div>
         <div class="button-group">
@@ -380,8 +395,10 @@
         <p data-aos="fade-right">Nếu muốn gửi quà mừng cưới đến chúng mình, bạn có thể quét mã qr phía dưới nha!</p>
         <img data-aos="flip-right" src="assets/images/QR.webp" alt="QR" />
       </div> -->
-      <p class="thanks" data-aos="fade-down">
-        Cảm ơn bạn đã dành tình cảm cho chúng mình! Chúng mình biết mọi người đều đang rất bận rộn, bận với công việc, với cuộc sống và với cả gia đình bạn. Nhưng thực sự sẽ rất tuyệt vời nếu như ngày hạnh phúc của chúng mình có thêm sự góp mặt của bạn và người thương. Chúng mình rất hi vọng sẽ có sự tham gia của bạn trong ngày quan trọng này để chứng kiến và chia sẻ niềm hạnh phúc cùng chúng mình.
+      <p class="thanks" data-aos="">
+        Gia đình chúng tôi chân thành cảm ơn Quý vị đã dành tình cảm cho <br>
+        Minh Nhật và Cẩm Tú. Sự hiện diện của Quý vị trong ngày trọng đại này <br>
+        sẽ là niềm vinh hạnh và niềm vui lớn lao đối với gia đình chúng tôi.
       </p>
       <p class="credits">Trân trọng kính mời!</p>
       <p class="text-end">Yên studio | Yên bề gia thất</p>

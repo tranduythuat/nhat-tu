@@ -60,6 +60,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        background-color: #fff;
     }
 
     .btn-yes {
@@ -79,7 +80,7 @@
     }
 
     .btn-no {
-        background: transparent;
+       
         color: $primary-color;
     }
 
@@ -130,6 +131,29 @@
         aspect-ratio: 3 / 1;
     }
 
+    .form-select {
+        font-family: inherit;
+        width: 100%;
+        padding: 2% 4%;
+        border-radius: 25px;
+        background: transparent;
+        font-size: 12px;
+        color: rgba(124, 103, 66, 0.75);
+        outline: none;
+        border: 1px solid $primary-color;
+        transition: border-color 0.3s ease;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("../../assets/images/icons/chevron_icon.png");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 9px;
+        padding-right: 45px;
+        cursor: pointer;
+        background-color: #fff;
+    }
+
     .submit-btn {
         width: 40%;
         padding: 2% 0;
@@ -146,6 +170,10 @@
         cursor: pointer;
         transition: all 0.3s ease;
         margin-top: 10px;
+    }
+
+    .guest-gender {
+        margin-bottom: 6%;
     }
 
     .submit-btn:hover {
@@ -175,6 +203,11 @@
         input,
         textarea {
             font-size: calc((12 / 500) * 100vw);
+        }
+
+        .form-select {
+            font-size: calc((12 / 500) * 100vw);
+            background-size: calc((9 / 500) * 100vw);
         }
     
         .submit-btn {

@@ -16,8 +16,8 @@ async function handleFormSubmit(e) {
 
   // Thông báo khi bắt đầu gửi
   Swal.fire({
-    title: "Đang gửi /Sending/...",
-    text: "Vui lòng chờ trong giây lát /Please wait a moment/",
+    title: "Đang gửi...",
+    text: "Vui lòng chờ trong giây lát",
     icon: "info",
     allowOutsideClick: false,
     didOpen: () => {
@@ -48,7 +48,7 @@ async function handleFormSubmit(e) {
     // Thông báo thành công
     Swal.fire({
       title: "Thành công /Success/!",
-      text: "Cảm ơn bạn đã gửi phản hồi, thông tin đã được gửi đến dâu rể rồi nha /Thank you for your feedback, the information has been sent to the bride and groom./",
+      text: "Chân thành cảm ơn quý cô chú, bác, anh chị, và bạn bè đã xác nhận. Thông tin đã được gửi đến gia đình Minh Nhật & Cẩm Tú.",
       icon: "success",
       confirmButtonText: "OK",
       confirmButtonColor: "#3f4122ff",
@@ -65,6 +65,51 @@ async function handleFormSubmit(e) {
       confirmButtonColor: "#3f4122ff",
     });
   }
+}
+
+function initGuestFields() {
+  const select = document.querySelector('select[name="guest_number"]');
+  const container = document.getElementById("guest-fields");
+  const lang = select.dataset.lang;
+
+  select.addEventListener("change", function () {
+    container.innerHTML = "";
+
+    const value = this.value;
+
+    if (!value || value === "0") return;
+
+    const number = parseInt(value);
+
+    for (let i = 1; i <= number; i++) {
+      const group = document.createElement("div");
+      group.className = "guest-group fade-in";
+
+      group.innerHTML = `
+        <div class="form-group fade-in guest-name" data-animate="fade-in">
+          <input
+            type="text"
+            id="guest-name"
+            name="guest_name_${i}"
+            placeholder="${lang === "vi"? "Tên khách mời đi kèm": "Name of accompanying guest"}"
+            required
+          />
+        </div>
+
+        <div class="form-group fade-in guest-gender" data-animate="fade-in">
+          <input
+            type="text"
+            id="guest-gender-${i}"
+            name="guest_gender_${i}"
+            placeholder="${lang === "vi"? "Giới tính": "Gender"}"
+            required
+          />
+        </div>
+      `;
+
+      container.appendChild(group);
+    }
+  });
 }
 
 async function toggleMusic(e) {
@@ -127,6 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
     fadeEffect: { crossFade: true },
     speed: 1000 // tốc độ chuyển (ms)
   });
+
+  initGuestFields();
 
   const btn = document.getElementById('player-btn');
   btn.addEventListener('click', toggleMusic);

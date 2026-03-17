@@ -105,6 +105,8 @@
 
                 p {
                     line-height: 1.8;
+                    text-transform: uppercase;
+                    font-size: 11px;
                 }
             }
 
@@ -212,7 +214,12 @@
                         max-width: calc((228 / 500) * 100vw);
                     }
                 }
-    
+
+                .invitation-text {
+                    p {
+                        font-size: calc((11 / 500) * 100vw);
+                    }
+                }
     
                 .time {
                     h2 {

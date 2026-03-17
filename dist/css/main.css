@@ -399,6 +399,8 @@ section {
 }
 .intro .content .location-time .invitation-text p {
   line-height: 1.8;
+  text-transform: uppercase;
+  font-size: 11px;
 }
 .intro .content .location-time .time h2 {
   font-size: 24px;
@@ -465,6 +467,9 @@ section {
   }
   .intro .content .location-time .photo-area img.couple-img {
     max-width: 45.6vw;
+  }
+  .intro .content .location-time .invitation-text p {
+    font-size: 2.2vw;
   }
   .intro .content .location-time .time h2 {
     font-size: 4.8vw;
@@ -1054,6 +1059,7 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: #fff;
 }
 .rsvp .btn-yes {
   background: transparent;
@@ -1069,7 +1075,6 @@ section {
   color: #faf8f3;
 }
 .rsvp .btn-no {
-  background: transparent;
   color: #806331;
 }
 .rsvp .btn-no:hover {
@@ -1112,6 +1117,28 @@ section {
   font-size: 12px;
   aspect-ratio: 3/1;
 }
+.rsvp .form-select {
+  font-family: inherit;
+  width: 100%;
+  padding: 2% 4%;
+  border-radius: 25px;
+  background: transparent;
+  font-size: 12px;
+  color: rgba(124, 103, 66, 0.75);
+  outline: none;
+  border: 1px solid #806331;
+  transition: border-color 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("../../assets/images/icons/chevron_icon.png");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 9px;
+  padding-right: 45px;
+  cursor: pointer;
+  background-color: #fff;
+}
 .rsvp .submit-btn {
   width: 40%;
   padding: 2% 0;
@@ -1128,6 +1155,9 @@ section {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 10px;
+}
+.rsvp .guest-gender {
+  margin-bottom: 6%;
 }
 .rsvp .submit-btn:hover {
   background: #574d42;
@@ -1152,6 +1182,10 @@ section {
   .rsvp textarea {
     font-size: 2.4vw;
   }
+  .rsvp .form-select {
+    font-size: 2.4vw;
+    background-size: 1.8vw;
+  }
   .rsvp .submit-btn {
     font-size: 2.4vw;
     letter-spacing: 0.4vw;
@@ -1171,7 +1205,7 @@ section {
   margin-bottom: 5%;
 }
 .footer .logo img {
-  width: 80px;
+  width: 120px;
   height: auto;
   object-fit: cover;
 }
@@ -1193,7 +1227,7 @@ section {
 }
 @media (max-width: 500px) {
   .footer .logo img {
-    width: 16vw;
+    width: 24vw;
   }
   .footer p.credits {
     font-size: 4vw;
