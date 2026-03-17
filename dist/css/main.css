@@ -334,7 +334,7 @@ section {
   padding: 23% 0 12%;
 }
 .intro .content .invitation .logo img {
-  max-width: 134px;
+  max-width: 80px;
   width: 100%;
   height: auto;
 }
@@ -444,7 +444,7 @@ section {
 }
 @media (max-width: 500px) {
   .intro .content .invitation .logo img {
-    max-width: 26.8vw;
+    max-width: 16vw;
   }
   .intro .content .invitation .family-info p {
     font-size: 2.2vw;
@@ -1202,10 +1202,10 @@ section {
 }
 .footer .logo {
   width: 100%;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 .footer .logo img {
-  width: 120px;
+  width: 80px;
   height: auto;
   object-fit: cover;
 }
@@ -1227,7 +1227,7 @@ section {
 }
 @media (max-width: 500px) {
   .footer .logo img {
-    width: 24vw;
+    width: 16vw;
   }
   .footer p.credits {
     font-size: 4vw;
