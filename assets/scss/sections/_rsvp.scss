@@ -103,6 +103,7 @@
     textarea {
         width: 100%;
         padding: 2% 4% 1%;
+        line-height: 1;
         border: 1px solid $primary-color;
         border-radius: 25px;
         font-family: "Cormorant Garamond", serif;
@@ -135,6 +136,7 @@
         font-family: inherit;
         width: 100%;
         padding: 2% 4%;
+        line-height: 1;
         border-radius: 25px;
         background: transparent;
         font-size: 12px;
