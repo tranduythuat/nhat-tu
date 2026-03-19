@@ -32,7 +32,7 @@
             display: flex;
             justify-content: center;
             margin: 0 auto;
-            width: 60%;
+            width: 70%;
             margin-top: 2%;
             .item {
                 flex: 1;
@@ -97,6 +97,15 @@
 
                 &:nth-of-type(5) .color .circle  {
                     background: linear-gradient(135deg, #fde4b0, #ffec8f, #d8b252e7, #f7d693);
+                }
+
+                &:nth-of-type(6) .color .circle  {
+                    background: linear-gradient(
+                        135deg,
+                        #2b2b2b 0%,
+                        #5a5a5a 50%,
+                        #494949 100%
+                      );
                 }
             }
         }
