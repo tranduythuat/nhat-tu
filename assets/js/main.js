@@ -72,16 +72,6 @@
               required
             />
           </div>
-  
-          <div class="form-group fade-in guest-gender" data-animate="fade-in">
-            <input
-              type="text"
-              id="guest-gender-${i}"
-              name="guest_gender_${i}"
-              placeholder="${lang === "vi"? "Giới tính": "Gender"}"
-              required
-            />
-          </div>
         `;
   
         container.appendChild(group);
@@ -608,8 +598,8 @@
     });
 
     const SHEET_ENDPOINTS = {
-      vow: "https://script.google.com/macros/s/AKfycbype9If_6ntWvFG4hg0uGGS6vq-1QV1YHhmQaLX_MFVVGqXQH9m9wlJLzIpTH3FNiWoYQ/exec?sheet=vow",
-      not_vow: "https://script.google.com/macros/s/AKfycbype9If_6ntWvFG4hg0uGGS6vq-1QV1YHhmQaLX_MFVVGqXQH9m9wlJLzIpTH3FNiWoYQ/exec?sheet=not-vow",
+      vow: "?sheet=vow",
+      not_vow: "?sheet=not-vow",
     };
 
     let sheetURL = SHEET_ENDPOINTS.vow;
