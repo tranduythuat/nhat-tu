@@ -512,7 +512,7 @@ section {
 
 .gallery {
   width: 100%;
-  aspect-ratio: 500/900;
+  aspect-ratio: 500/870;
   margin: 2% 0;
   display: flex;
   justify-content: center;
@@ -676,7 +676,7 @@ section {
   align-items: center;
   width: 100%;
   perspective: 1000px;
-  padding: 20% 0 10%;
+  padding: 5% 0 10%;
 }
 .dresscode .content h2 {
   font-size: 42px;
