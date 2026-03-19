@@ -14,7 +14,7 @@
         width: 100%;
         .title {
             font-family: $font-hero;
-            font-size: 60px;
+            font-size: 42px;
             font-weight: normal;
             padding-bottom: 9%;
         }
@@ -48,7 +48,7 @@
     @media (max-width: 500px) {
         .content {
             .title {
-                font-size: calc((60 / 500) * 100vw);
+                font-size: calc((42 / 500) * 100vw);
             }
             .timeline-list {
                 .event {

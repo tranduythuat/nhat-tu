@@ -13,7 +13,7 @@
     margin-top: 10%;
 
     h2.title {
-        font-family: "UVNKeChuyen3", sans-serif;
+        font-family: $font-hero;
         font-size: 42px;
         font-weight: normal;
         padding-bottom: 5%;
@@ -34,7 +34,8 @@
     }
 
     .label-confirm {
-        font-size: 14px;
+        font-size: 12px;
+        text-transform: uppercase;
         margin-bottom: 3%;
         margin-top: 5%;
     }
@@ -45,7 +46,8 @@
 
     .btn {
         flex: 1;
-        padding: 2% 2%;
+        padding: 2% 2% 1%;
+        min-height: 22px;
         border: 1px solid $primary-color;
         border-radius: 25px;
         font-family: "Cormorant Garamond", serif;
@@ -101,12 +103,13 @@
 
     input,
     textarea {
+        min-height: 22px;
         width: 100%;
         padding: 2% 4% 1%;
         line-height: 1;
         border: 1px solid $primary-color;
+        font-family: inherit;
         border-radius: 25px;
-        font-family: "Cormorant Garamond", serif;
         font-size: 12px;
         color: $primary-color;
         background: #fff;
@@ -125,16 +128,23 @@
         color: #a89b88;
     }
 
+    textarea::placeholder {
+        margin: auto;
+    }
+
     textarea {
         resize: vertical;
         border-radius: 20px;
         font-size: 12px;
         aspect-ratio: 3 / 1;
+        padding-top: 14%;
+
     }
 
     .form-select {
         font-family: inherit;
         width: 100%;
+        min-height: 22px;
         padding: 2% 4%;
         line-height: 1;
         border-radius: 25px;
@@ -158,7 +168,7 @@
 
     .submit-btn {
         width: 40%;
-        padding: 2% 0;
+        padding: 2% 0 1%;
         line-height: 1;
         background: #806331ff;
         color: #faf8f3;
