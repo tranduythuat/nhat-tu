@@ -1164,7 +1164,8 @@ section {
 .rsvp .btn {
   flex: 1;
   padding: 2% 2% 1%;
-  min-height: 22px;
+  min-height: 28px;
+  height: 28px;
   border: 1px solid #806331;
   border-radius: 25px;
   font-family: "Cormorant Garamond", serif;
@@ -1239,7 +1240,7 @@ section {
 .rsvp textarea {
   resize: vertical;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 10px;
   aspect-ratio: 3/1;
   padding-top: 14%;
 }
@@ -1306,9 +1307,11 @@ section {
     font-size: 2.2vw;
     letter-spacing: 0.2vw;
   }
-  .rsvp input,
-  .rsvp textarea {
+  .rsvp input {
     font-size: 2.4vw;
+  }
+  .rsvp textarea {
+    font-size: 2vw;
   }
   .rsvp .form-select {
     font-size: 2.4vw;
