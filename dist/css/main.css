@@ -1269,7 +1269,7 @@ section {
 }
 .rsvp .submit-btn {
   width: 40%;
-  padding: 2% 0 1%;
+  padding: 2% 0;
   line-height: 1;
   background: #806331;
   color: #faf8f3;
