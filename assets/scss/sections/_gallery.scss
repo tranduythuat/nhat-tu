@@ -3,7 +3,7 @@
 
 .gallery {
     width: 100%;
-    // background: url("../../assets/images/bg/gallerey_bg.webp") no-repeat center/contain;
+    // background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/bg/gallerey_bg.webp") no-repeat center/contain;
     aspect-ratio: 500 / 900;
     margin: 2% 0;
     @include flex-center;
@@ -31,6 +31,7 @@
                 width: 100%;
                 aspect-ratio: 215 / 336;
                 background-color: $primary-color;
+                background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.083.jpg') no-repeat center / cover;
             }
         }
 
@@ -57,7 +58,7 @@
                     width: 100%;
                     aspect-ratio: 106 / 162;
                     background-color: $primary-color;
-                   
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.197.jpg') no-repeat center / cover;
                 }
             }
         }
@@ -83,6 +84,7 @@
                     width: 100%;
                     aspect-ratio: 162 / 251;
                     background-color: $primary-color;
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.177.jpg') no-repeat center / cover;
                 }
             }
             .column1_row2 {
@@ -114,6 +116,7 @@
                     width: 100%;
                     aspect-ratio: 234 / 157;
                     background-color: $primary-color;
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.014.jpg') no-repeat center / cover;
                 }
             }
 
@@ -124,6 +127,7 @@
                     width: 100%;
                     aspect-ratio: 182 / 260;
                     background-color: $primary-color;
+                    background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.159.jpg') no-repeat center / cover;
                 }
             }
         }

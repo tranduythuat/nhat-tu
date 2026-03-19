@@ -5,17 +5,16 @@
     width: 100%;
     overflow: hidden;
 
-    &-style .img-box {
+    &-style .img-box-top {
         max-width: 100%;
         width: 100%;
         aspect-ratio: 10 / 2.5;
         background-color: $primary-color;
         overflow: hidden;
-        img.film {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        background-image: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.014.jpg');
+        background-repeat: no-repeat;
+        background-size: 125%;
+        background-position: 100% 95%;
     }
 
     .highlight {
@@ -61,6 +60,7 @@
             position: absolute;
             left: 43%;
             top: -5%;
+
             .img-box {
                 max-width: 307px;
                 background-color: #f2ebd8ff;
@@ -68,14 +68,17 @@
                 height: 100%;
                 padding: 4%;
                 transform: rotate(13deg);
+
                 .box {
                     width: 100%;
                     height: 80%;
                     background-color: $primary-color;
+
                     img {
-                       width: 100%;
-                       height: 100%;
+                        width: 100%;
+                        height: 100%;
                         object-fit: cover;
+                        object-position: 50% 20%;
                     }
                 }
             }
@@ -95,14 +98,17 @@
                 height: 100%;
                 transform: rotate(-4deg);
                 padding: 4%;
+
                 .box {
                     width: 100%;
                     height: 80%;
                     background-color: $primary-color;
+
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+                        object-position: 50% 28%;
                     }
                 }
             }
@@ -165,9 +171,9 @@
     .slider .main-swiper .swiper-button-next,
     .slider .main-swiper .swiper-button-prev {
         color: #fffffe;
-    }   
+    }
 
-    .slider .main-swiper .swiper-button-next:after, 
+    .slider .main-swiper .swiper-button-next:after,
     .slider .main-swiper .swiper-button-prev:after {
         font-size: 60px;
         font-weight: 900;
@@ -178,15 +184,15 @@
             img.text-the {
                 width: calc((91 / 500) * 100vw);
             }
-    
+
             h2 {
                 font-size: calc((28 / 500) * 100vw);
             }
-    
+
             .photo-frame.right {
                 max-width: calc((290 / 500) * 100vw);
             }
-    
+
             .photo-frame.left {
                 max-width: calc((228 / 500) * 100vw);
             }

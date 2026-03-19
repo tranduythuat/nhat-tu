@@ -264,6 +264,7 @@ section {
   }
 }
 .cover .content {
+  background: url("../../assets/images/bg/hero_bg.png") no-repeat center/cover;
   background-color: #806331;
   width: 100%;
   aspect-ratio: 500/822;
@@ -279,11 +280,10 @@ section {
   font-weight: normal;
 }
 .cover .content .photo-frame {
-  max-width: 210px;
+  max-width: 240px;
   width: 100%;
   aspect-ratio: 2/2.5;
   perspective: 1000px;
-  background-color: rgba(85, 61, 20, 0.7411764706);
   margin: 5% 0;
 }
 .cover .content .photo-frame img {
@@ -313,7 +313,7 @@ section {
     font-size: 8vw;
   }
   .cover .content .photo-frame {
-    max-width: 42vw;
+    max-width: 48vw;
   }
   .cover .content .subtext {
     font-size: 4vw;
@@ -408,13 +408,7 @@ section {
   max-width: 228px;
   width: 100%;
   aspect-ratio: 1/1.3;
-}
-.intro .content .invitation .photo-area img.couple-img {
-  background-color: rgba(85, 61, 20, 0.7411764706);
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.135.jpg") no-repeat center/cover;
 }
 @media (max-width: 500px) {
   .intro .content .invitation .logo img {
@@ -548,6 +542,7 @@ section {
   width: 100%;
   aspect-ratio: 215/336;
   background-color: #806331;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.083.jpg") no-repeat center/cover;
 }
 .gallery .row1 .column2 {
   flex: 3;
@@ -576,6 +571,7 @@ section {
   width: 100%;
   aspect-ratio: 106/162;
   background-color: #806331;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.197.jpg") no-repeat center/cover;
 }
 .gallery .row2 {
   display: flex;
@@ -600,6 +596,7 @@ section {
   width: 100%;
   aspect-ratio: 162/251;
   background-color: #806331;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.177.jpg") no-repeat center/cover;
 }
 .gallery .row2 .column1 .column1_row2 {
   display: flex;
@@ -627,6 +624,7 @@ section {
   width: 100%;
   aspect-ratio: 234/157;
   background-color: #806331;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.014.jpg") no-repeat center/cover;
 }
 .gallery .row2 .column2 .column2_row2 {
   width: 100%;
@@ -636,6 +634,7 @@ section {
   width: 100%;
   aspect-ratio: 182/260;
   background-color: #806331;
+  background: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.159.jpg") no-repeat center/cover;
 }
 @media (max-width: 500px) {
   .gallery .row1 .column1 .photo-box {
@@ -965,17 +964,16 @@ section {
   width: 100%;
   overflow: hidden;
 }
-.album-style .img-box {
+.album-style .img-box-top {
   max-width: 100%;
   width: 100%;
   aspect-ratio: 10/2.5;
   background-color: #806331;
   overflow: hidden;
-}
-.album-style .img-box img.film {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-image: url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.014.jpg");
+  background-repeat: no-repeat;
+  background-size: 125%;
+  background-position: 100% 95%;
 }
 .album .highlight {
   width: 100%;
@@ -1033,6 +1031,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 20%;
 }
 .album .highlight .photo-frame.left {
   position: absolute;
@@ -1058,6 +1057,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 28%;
 }
 .album .slider .swiper {
   width: 95%;

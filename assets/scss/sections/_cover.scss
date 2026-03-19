@@ -3,7 +3,7 @@
 
 .cover {
     .content {
-        // background: url('../../assets/images/bg/hero_bg.jpg') no-repeat center/cover;
+        background: url('../../assets/images/bg/hero_bg.png') no-repeat center/cover;
         background-color: $primary-color;
         width: 100%;
         aspect-ratio: 500 / 822;
@@ -18,11 +18,10 @@
         }
 
         .photo-frame {
-            max-width: 210px;
+            max-width: 240px;
             width: 100%;
             aspect-ratio: 2 / 2.5;
             perspective: 1000px;
-            background-color: #553d14bd;
             margin: 5% 0;
             img {
                 width: 100%;
@@ -60,7 +59,7 @@
             }
     
             .photo-frame {
-                max-width: calc((210 / 500) * 100vw);
+                max-width: calc((240 / 500) * 100vw);
             }
     
             .subtext {

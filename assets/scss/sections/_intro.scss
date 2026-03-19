@@ -98,14 +98,7 @@
                 max-width: 228px;
                 width: 100%;
                 aspect-ratio: 1 / 1.3;
-
-                img.couple-img {
-                    background-color: $image-bg-color;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 50%;
-                }
+                background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.135.jpg') no-repeat center / cover;
             }
         }
     }
