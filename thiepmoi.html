@@ -452,9 +452,21 @@
             <label for="vegetarian" class="btn btn-no">Có</label>
         </div>
 
-        <div class="form-group" data-animate="fade-in" data-animate-scroll-start="top 90%">
-          <input type="text" placeholder="Số lượng khách mời đi kèm dùng món chay (nếu có)" name="guest_diatery_number">
+        <div class="form-group guest_diatery_number" data-animate="fade-in" data-animate-scroll-start="top 90%">
+          <select class="form-select" name="guest_diatery_number" data-lang="vi">
+            <option value="" disabled selected>
+              Số lượng khách mời đi kèm dùng món chay (nếu có)
+            </option>
+            <option value="1 người">1 người</option>
+            <option value="2 người">2 người</option>
+            <option value="3 người">3 người</option>
+            <option value="4 người">4 người</option>
+            <option value="5 người">5 người</option>
+          </select>
         </div>
+        <!-- <div class="form-group" data-animate="fade-in" data-animate-scroll-start="top 90%">
+          <input type="number" placeholder="Số lượng khách mời đi kèm dùng món chay (nếu có)" name="guest_diatery_number">
+        </div> -->
 
         <div class="form-group" data-animate="fade-in" data-animate-scroll-start="top 90%">
           <textarea placeholder="HÃY GỬI LỜI CHÚC ĐẾN CÔ DÂU VÀ CHÚ RỂ NHÉ" name="wish"></textarea>
