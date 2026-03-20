@@ -114,9 +114,11 @@
 
     tl.from(".color1", { x: -100, opacity: 0, duration: 0.8 })
       .from(".color2", { x: -100, opacity: 0, duration: 0.8 }, "-=0.4")
-      .from(".color3", { x: -100, opacity: 0, duration: 0.8 }, "-=0.4")
-      .from(".color4", { x: -100, opacity: 0, duration: 0.8 }, "-=0.4")
-      .from(".color5", { x: -100, opacity: 0, duration: 0.8 }, "-=0.4");
+      .from(".color3", { x: -100, opacity: 0, duration: 0.8 }, "-=0.45")
+      .from(".color4", { x: -100, opacity: 0, duration: 0.8 }, "-=0.5")
+      .from(".color5", { x: -100, opacity: 0, duration: 0.8 }, "-=0.55")
+      .from(".color6", { x: -100, opacity: 0, duration: 0.8 }, "-=0.6")
+      .from(".color7", { x: -100, opacity: 0, duration: 0.8 }, "-=0.5");
   }
 
   function initPage() {
@@ -542,19 +544,18 @@
     }
 
     
-    if (data.dietary.length) {
-      data.dietary = data.dietary.join(", ");
-    } else {
-      data.dietary = "";
-    }
+    // if (data.dietary.length) {
+    //   data.dietary = data.dietary.join(", ");
+    // } else {
+    //   data.dietary = "";
+    // }
     
     const {
       name,
       confirm,
-      guest_info,
-      email,
+      guest_number,
       dietary,
-      note,
+      guest_diatery_number,
       wish,
     } = data;
 
@@ -567,7 +568,7 @@
         sendingText: "Vui lòng chờ trong giây lát",
         successTitle: "Thành công!",
         successText:
-          "Cảm ơn bạn đã xác nhận. Thông tin đã được chuyển đến cô dâu và chú rể rồi nha.",
+          "Cảm ơn quý Ông bà, Cô chú, Anh chị và Bạn bè đã xác nhận. Thông tin đã được chuyển đến cô dâu và chú rể.",
         errorTitle: "Lỗi!",
         errorServer: "OPPS! Không tìm thấy server",
         errorRetry: "Thử lại",
@@ -597,15 +598,16 @@
       didOpen: () => Swal.showLoading(),
     });
 
-    const SHEET_ENDPOINTS = {
-      vow: "?sheet=vow",
-      not_vow: "?sheet=not-vow",
-    };
+    // const SHEET_ENDPOINTS = {
+    //   vow: "?sheet=vow",
+    //   not_vow: "?sheet=not-vow",
+    // };
 
-    let sheetURL = SHEET_ENDPOINTS.vow;
-    if (timeline === "v2") {
-      sheetURL = SHEET_ENDPOINTS.not_vow
-    }
+    // let sheetURL = SHEET_ENDPOINTS.vow;
+    // if (timeline === "v2") {
+    //   sheetURL = SHEET_ENDPOINTS.not_vow
+    // }
+    const sheetURL = 'https://script.google.com/macros/s/AKfycby68akClaB4Tpvh8kaSTHwnZIKK5n5hJj5KLom1pBjEHyjJynfMVyf1ubrpm29PpE0n/exec?sheet=confirm';
 
     try {
       const res = await fetch(sheetURL, {
@@ -614,10 +616,9 @@
         body: new URLSearchParams({
           name,
           confirm,
-          guest_info,
-          email,
+          guest_number,
           dietary,
-          note,
+          guest_diatery_number,
           wish,
         }),
       });
@@ -647,7 +648,7 @@
         text: t.successText,
         icon: "success",
         confirmButtonText: "OK",
-        confirmButtonColor: "#3c7fc2",
+        confirmButtonColor: "#806331ff",
       });
     } catch (error) {
       console.error("Error:", error);
@@ -758,11 +759,11 @@
     initSwiper();
     // initMusic();
     initDresscodeAnimation();
-    initGuestFields();
+    // initGuestFields();
     initTimeline();
     // initFAQ();
     initRSVP();
-    startCountdown(new Date("2026-04-14T16:00:00"));
+    // startCountdown(new Date("2026-04-14T16:00:00"));
   }
 
   document.addEventListener("DOMContentLoaded", init);

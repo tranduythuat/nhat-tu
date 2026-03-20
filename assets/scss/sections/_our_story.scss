@@ -25,7 +25,7 @@
                 text-transform: uppercase;
                 font-weight: 300;
                 position: relative;
-                top: -5%;
+                top: -1%;
             }
 
             h3.title {
@@ -42,6 +42,12 @@
                 padding: 0 6% 10%;
                 text-align: left;
                 // margin-top: -20px;
+
+                .description {
+                    display: block;
+                    width: 100%;
+                    aspect-ratio: 10 / 5;
+                }
             }
 
             .column:first-child:after {
@@ -86,7 +92,7 @@
                 max-width: 152px;
                 width: 100%;
                 height: auto;
-                top: -10%;
+                top: -30%;
                 right: 0;
             }
 
@@ -105,7 +111,7 @@
                 max-width: 140px;
                 width: 100%;
                 height: auto;
-                top: -25%;
+                top: -64%;
                 left: 0;
             }
 
@@ -114,7 +120,7 @@
             }
 
             .column:first-child {
-                border-right: solid 2px $primary-color;
+                // border-right: solid 2px $primary-color;
             }
         }
     }
