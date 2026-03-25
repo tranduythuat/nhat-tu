@@ -1156,6 +1156,9 @@ section {
 .rsvp p.info-text {
   padding: 2% 0 4%;
 }
+.rsvp p.note-text {
+  font-style: italic;
+}
 .rsvp .button-group {
   display: flex;
   gap: 5%;
