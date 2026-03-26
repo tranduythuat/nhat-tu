@@ -1158,6 +1158,7 @@ section {
 }
 .rsvp p.note-text {
   font-style: italic;
+  margin-bottom: 5%;
 }
 .rsvp .button-group {
   display: flex;
