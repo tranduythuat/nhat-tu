@@ -1354,25 +1354,25 @@ section {
   font-size: 10px;
   margin-bottom: 3%;
 }
-.footer.nha-gai {
+.footer.nha-gai-v1 {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.113), rgba(0, 0, 0, 0.138)), url("https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Pre.077.jpg") no-repeat center/cover;
   aspect-ratio: 500/750;
   justify-content: start;
   color: white;
 }
-.footer.nha-gai .logo {
+.footer.nha-gai-v1 .logo {
   margin-top: 13%;
 }
-.footer.nha-gai .qr p {
+.footer.nha-gai-v1 .qr p {
   text-transform: uppercase;
 }
-.footer.nha-gai .qr img {
+.footer.nha-gai-v1 .qr img {
   max-width: 130px;
   width: 100%;
   height: auto;
   margin: 10%;
 }
-.footer.nha-gai .text-end {
+.footer.nha-gai-v1 .text-end {
   margin-top: 10%;
 }
 @media (max-width: 500px) {
@@ -1385,7 +1385,7 @@ section {
   .footer p.text-end {
     font-size: 2vw;
   }
-  .footer.nha-gai .qr img {
+  .footer.nha-gai-v1 .qr img {
     max-width: 26vw;
   }
 }
