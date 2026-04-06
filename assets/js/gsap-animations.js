@@ -55,7 +55,7 @@ function gsapFadeIn(element, options = {}) {
 
   gsap.fromTo(
     element,
-    { opacity: 0, y: 50, filter: "blur(10px)" },
+    { opacity: 0, y: 50, filter: "blur(5px)" },
     {
       opacity: 1,
       y: 0,
@@ -206,70 +206,83 @@ function gsapFadeRight(element, options = {}) {
   );
 }
 
-function gsapFadeLeft(selector) {
-  gsap.utils.toArray(selector).forEach((el) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, x: 80 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-  });
+function gsapFadeLeft(element, options = {}) {
+  const {
+    delay = 0,
+    duration = 1,
+    scrollStart = "top 85%"
+  } = options;
+
+  gsap.fromTo(
+    element,
+    { opacity: 0, x: 80 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: duration,
+      delay: delay,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: scrollStart,
+        toggleActions: "play none none reverse",
+      },
+    }
+  );
 }
 
-
-function gsapFadeUp(selector) {
-  gsap.utils.toArray(selector).forEach((el) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: 120 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-  });
+function gsapFadeUp(element, options = {}) {
+  const {
+    delay = 0,
+    duration = 1,
+    scrollStart = "top 85%"
+  } = options;
+  gsap.fromTo(
+    element,
+    { opacity: 0, y: 80 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: duration,
+      delay: delay,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: scrollStart,
+        toggleActions: "play none none reverse",
+      },
+    }
+  );
 }
 
-function gsapFadeDown(selector) {
-  gsap.utils.toArray(selector).forEach((el) => {
-    gsap.fromTo(
-      el,
-      { opacity: 0, y: -120 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-  });
+function gsapFadeDown(element, options = {}) {
+  const {
+    delay = 0,
+    duration = 1,
+    scrollStart = "top 85%"
+  } = options;
+
+  gsap.fromTo(
+    element,
+    { opacity: 0, y: -80 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: duration,
+      delay: delay,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: element,
+        start: scrollStart,
+        toggleActions: "play none none reverse",
+      },
+    }
+  );
 }
 
 
 function gsapFlipVerticalLeft(el, options = {}) {
-   const {
+  const {
     delay = 0,
     duration = 1,
     scrollStart = "top 85%"

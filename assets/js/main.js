@@ -708,7 +708,7 @@
 
       const options = {
         delay: parseFloat(el.dataset.animateDelay) || 0,
-        duration: parseFloat(el.dataset.animateDuration) || 1,
+        duration: parseFloat(el.dataset.animateDuration) || 2,
         scrollStart: el.dataset.animateScrollStart || "top 85%",
       };
 
@@ -757,7 +757,7 @@
     // initTimelineContent();
     initAnimations();
     initSwiper();
-    // initMusic();
+    initMusic();
     initDresscodeAnimation();
     // initGuestFields();
     initTimeline();

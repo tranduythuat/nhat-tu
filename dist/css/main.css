@@ -38,6 +38,7 @@ body {
   height: 100%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.513);
   margin: 0;
+  overflow: hidden;
 }
 
 /* music */
