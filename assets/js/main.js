@@ -83,29 +83,43 @@
        MUSIC
     ====================================================== */
 
-  function initMusic() {
-    const audio = qs("#audio");
-    const icon = qs("#iconSvg");
-    const btn = qs("#player-btn");
-
-    if (!audio || !icon || !btn) return;
-
-    btn.addEventListener("click", () => {
-      if (!audio.src) return;
-      audio.paused ? tryPlayAudio(audio) : audio.pause();
-    });
-
-    audio.addEventListener("play", () => icon.classList.add("spin"));
-    audio.addEventListener("pause", () => icon.classList.remove("spin"));
-  }
-
-  function tryPlayAudio(audio = qs("#audio")) {
-    if (!audio || !audio.src || !audio.paused) return Promise.resolve();
-
-    return audio.play().catch((error) => {
-      console.debug("Autoplay blocked:", error);
-    });
-  }
+    function initMusic() {
+      const audio = qs("#audio");
+      const icon = qs("#iconSvg");
+      const btn = qs("#player-btn");
+      const label = qs("#musicLabel");
+  
+      let isOpen = true
+  
+      if (!audio || !icon || !btn || !label) return;
+  
+      // 👉 GSAP timeline cho label
+      const tl = gsap.timeline({ paused: true });
+  
+      tl.to(label, {
+        x: 200,
+        // opacity: 0,
+        duration: 1,
+        ease: "power2.inOut",
+         pointerEvents: "none"
+      });
+  
+      btn.addEventListener("click", () => {
+        if (!audio.src) return;
+        audio.paused ? audio.play() : audio.pause();
+  
+        // toggle label
+        if (isOpen) {
+          tl.play();
+        } else {
+          tl.reverse();
+        }
+        isOpen = !isOpen;
+      });
+  
+      audio.addEventListener("play", () => icon.classList.add("spin"));
+      audio.addEventListener("pause", () => icon.classList.remove("spin"));
+    }
 
   /* ======================================================
        DRESSCODE ANIMATION
@@ -757,7 +771,7 @@
   function initAutoScroll() {
     let animationFrameId = null;
     let userInteracted = false;
-    const scrollSpeed = 0.1;
+    const scrollSpeed = 0.06;
     const shouldIgnoreInteraction = (event) => {
       return event.target instanceof Element && Boolean(event.target.closest("#player-btn"));
     };
@@ -778,7 +792,7 @@
     window.addEventListener("keydown", markInteracted, { once: true });
     window.addEventListener("mousedown", markInteracted, { once: true });
 
-    window.addEventListener("load", () => {
+    const startAutoScroll = () => {
       if (userInteracted) return;
       if (window.location.hash) return;
       if (window.scrollY > 16) return;
@@ -786,8 +800,6 @@
 
       window.setTimeout(() => {
         if (userInteracted) return;
-
-        tryPlayAudio();
 
         let lastTimestamp = null;
 
@@ -814,7 +826,14 @@
 
         animationFrameId = window.requestAnimationFrame(step);
       }, 1000);
-    }, { once: true });
+    };
+
+    if (document.readyState === "complete") {
+      startAutoScroll();
+      return;
+    }
+
+    window.addEventListener("load", startAutoScroll, { once: true });
   }
 
   /* ======================================================

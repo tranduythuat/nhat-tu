@@ -11,11 +11,11 @@
     justify-content: center;
     text-align: center;
     margin-top: 10%;
+    font-weight: bold;
 
     h2.title {
         font-family: $font-hero;
         font-size: 42px;
-        font-weight: normal;
         padding-bottom: 5%;
     }
 
@@ -25,11 +25,15 @@
 
     p.info-text {
         padding: 2% 0 4%;
+        font-size: 14px;
+        font-weight: 500;
     }
 
     p.note-text {
         font-style: italic;
         margin-bottom: 5%;
+        font-size: 14px;
+        font-weight: 500;
     }
 
     .button-group {
@@ -58,7 +62,7 @@
         font-family: "Cormorant Garamond", serif;
         font-size: 11px;
         line-height: 1;
-        font-weight: 300;
+        font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
         text-transform: uppercase;
@@ -115,10 +119,11 @@
         border: 1px solid $primary-color;
         font-family: inherit;
         border-radius: 25px;
-        font-size: 12px;
+        font-size: 13px;
         color: $primary-color;
         background: #fff;
         transition: all 0.3s ease;
+        font-weight: 600;
     }
 
     input:focus,
@@ -135,7 +140,7 @@
 
     textarea::placeholder {
         margin: auto;
-        font-size: 10px;
+        font-size: 11px;
     }
 
     textarea {
@@ -154,7 +159,7 @@
         line-height: 1;
         border-radius: 25px;
         background: transparent;
-        font-size: 12px;
+        font-size: 13px;
         color: rgba(124, 103, 66, 0.75);
         outline: none;
         border: 1px solid $primary-color;
@@ -207,6 +212,10 @@
         h2.title {
             font-size: calc((42 / 500) * 100vw);
         }
+
+        p.info-text, p.note-text {
+            font-size: calc((14 / 500) * 100vw);
+        }
     
         .label-confirm {
             font-size: calc((12 / 500) * 100vw);
@@ -218,7 +227,7 @@
         }
     
         input {
-            font-size: calc((12 / 500) * 100vw);
+            font-size: calc((13 / 500) * 100vw);
         }
 
         textarea {
@@ -226,10 +235,10 @@
         }
 
         textarea::placeholder {
-            font-size: calc((10 / 500) * 100vw);
+            font-size: calc((11 / 500) * 100vw);
         }
         .form-select {
-            font-size: calc((12 / 500) * 100vw);
+            font-size: calc((13 / 500) * 100vw);
             background-size: calc((9 / 500) * 100vw);
         }
     

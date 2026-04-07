@@ -14,9 +14,9 @@
         padding: 5% 0 10%;
 
         h2 {
-            font-size: 42px;
+            font-size: 44px;
             font-family: $font-hero;
-            font-weight: 300;
+            font-weight: 600;
             margin-bottom: 5%;
             letter-spacing: 2px;
         }
@@ -73,7 +73,7 @@
     @media (max-width: 500px) {
         .content {
             h2 {
-                font-size: calc((42 / 500) * 100vw);
+                font-size: calc((44 / 500) * 100vw);
                 letter-spacing: calc((2 / 500) * 100vw);
             }
 

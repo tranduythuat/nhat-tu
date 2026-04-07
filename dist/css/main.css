@@ -49,7 +49,7 @@
 body {
   font-family: "iCielBCOldStyle", sans-serif;
   color: #806331;
-  font-size: 12px;
+  font-size: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,34 +66,75 @@ body {
 }
 
 /* music */
-.player {
+.music-box {
+  display: flex;
   position: fixed;
   bottom: 10px;
-  right: 2%;
-  width: 50px;
-  aspect-ratio: 1;
-  border-radius: 50%;
+  right: 1%;
+  z-index: 10000;
   cursor: pointer;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  z-index: 9999;
-  border: 1px solid var(--text-title-color);
-  min-width: 40px;
+  isolation: isolate;
 }
-
-.player #iconSvg {
-  width: 100%;
+.music-box .label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-origin: right center;
+  position: absolute;
+  right: 30%;
+  z-index: 1;
+  max-width: 320px;
+  width: 200%;
   height: 100%;
-  fill: var(--text-title-color);
+  overflow: hidden;
+}
+.music-box .label .musicLabel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  background-color: #fbf8f2;
+  padding: 4% 15%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border: 1px solid #c0ad87;
+  opacity: 0.9;
+}
+.music-box .player {
+  max-width: 50px;
+  width: 100%;
+  aspect-ratio: 1;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f2ebd8;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  background: rgb(114, 88, 43);
+}
+.music-box .player #iconSvg {
+  width: 75%;
+  height: auto;
 }
 
 @media (max-width: 500px) {
   body {
+    font-size: 2.6vw;
+  }
+  .music-box {
+    bottom: 2vw;
+  }
+  .music-box .label {
+    max-width: 60vw;
+  }
+  .music-box .label .musicLabel {
     font-size: 2.4vw;
   }
-  .player {
-    width: 10vw;
+  .music-box .player {
+    max-width: 10vw;
   }
 }
 .spin {
@@ -298,14 +339,15 @@ section {
   align-items: center;
   flex-direction: column;
   color: #fff;
+  font-weight: bold;
 }
 .cover .content .names {
   font-family: "UVNBUCTHU", sans-serif;
-  font-size: 40px;
-  font-weight: normal;
+  font-size: 44px;
+  letter-spacing: 1.4px;
 }
 .cover .content .photo-frame {
-  max-width: 240px;
+  max-width: 250px;
   width: 100%;
   aspect-ratio: 2/2.5;
   perspective: 1000px;
@@ -318,15 +360,15 @@ section {
 }
 .cover .content .subtext {
   font-family: "UVNBUCTHU", sans-serif;
-  font-size: 20px;
-  font-weight: normal;
+  font-size: 24px;
+  letter-spacing: 1.2px;
 }
 .cover .content .divider {
   margin: 1% 0;
   perspective: 100px;
 }
 .cover .content .divider .divider-icon {
-  max-width: 74px;
+  max-width: 80px;
   width: 100%;
   height: auto;
 }
@@ -335,16 +377,18 @@ section {
 }
 @media (max-width: 500px) {
   .cover .content .names {
-    font-size: 8vw;
+    font-size: 8.8vw;
+    letter-spacing: 0.28vw;
   }
   .cover .content .photo-frame {
-    max-width: 48vw;
+    max-width: 50vw;
   }
   .cover .content .subtext {
-    font-size: 4vw;
+    font-size: 4.8vw;
+    letter-spacing: 0.24vw;
   }
   .cover .content .divider .divider-icon {
-    max-width: 14.8vw;
+    max-width: 16vw;
   }
 }
 
@@ -361,6 +405,7 @@ section {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  font-weight: bold;
 }
 .intro .content .invitation {
   width: 100%;
@@ -398,9 +443,8 @@ section {
 }
 .intro .content .invitation .couple-names h2 {
   font-family: "UVNBUCTHU", sans-serif;
-  font-size: 42px;
+  font-size: 48px;
   letter-spacing: 1.2px;
-  font-weight: 300;
   margin: 4% 0;
 }
 .intro .content .invitation .couple-names .separator-text {
@@ -422,11 +466,10 @@ section {
   padding: 4% 0;
 }
 .intro .content .invitation .top-detail h2 {
-  font-size: 28px;
-  font-weight: 300;
+  font-size: 32px;
 }
 .intro .content .invitation .top-detail .subtime {
-  font-size: 13px;
+  font-size: 14px;
 }
 .intro .content .invitation .photo-area {
   margin-top: 15%;
@@ -443,7 +486,7 @@ section {
     width: 3.2vw;
   }
   .intro .content .invitation .couple-names h2 {
-    font-size: 8.4vw;
+    font-size: 9.6vw;
     letter-spacing: 0.24vw;
   }
   .intro .content .invitation .couple-names .separator-text {
@@ -453,10 +496,10 @@ section {
     width: 12vw;
   }
   .intro .content .invitation .top-detail h2 {
-    font-size: 5.6vw;
+    font-size: 6.4vw;
   }
   .intro .content .invitation .top-detail .subtime {
-    font-size: 2.6vw;
+    font-size: 2.8vw;
   }
   .intro .content .invitation .photo-area {
     max-width: 45.6vw;
@@ -469,6 +512,7 @@ section {
 .location-time .content {
   width: 100%;
   text-align: center;
+  font-weight: bold;
 }
 .location-time .content .invitation-text {
   padding: 12% 0;
@@ -479,7 +523,6 @@ section {
 }
 .location-time .content .time h2 {
   font-size: 28px;
-  font-weight: 300;
   margin: 1%;
 }
 .location-time .content .time h2 span {
@@ -503,11 +546,13 @@ section {
 }
 .location-time .content .venue-details .location-name {
   font-family: "UVNBUCTHU", sans-serif;
-  font-size: 42px;
+  font-size: 44px;
   line-height: 1.2;
-  font-weight: 300;
   letter-spacing: 1.2px;
   margin-bottom: 2%;
+}
+.location-time .content .venue-details .address-info {
+  font-size: 14px;
 }
 .location-time .content .venue-details .map-link {
   width: 100%;
@@ -522,7 +567,7 @@ section {
 }
 @media (max-width: 500px) {
   .location-time .content .time h2 {
-    font-size: 4.8vw;
+    font-size: 5.6vw;
   }
   .location-time .content .time h2 span {
     font-size: 5.2vw;
@@ -531,8 +576,11 @@ section {
     width: 14vw;
   }
   .location-time .content .venue-details .location-name {
-    font-size: 8.4vw;
+    font-size: 8.8vw;
     letter-spacing: 0.24vw;
+  }
+  .location-time .content .venue-details .address-info {
+    font-size: 2.8vw;
   }
 }
 
@@ -705,9 +753,9 @@ section {
   padding: 5% 0 10%;
 }
 .dresscode .content h2 {
-  font-size: 42px;
+  font-size: 44px;
   font-family: "UVNBUCTHU", sans-serif;
-  font-weight: 300;
+  font-weight: 600;
   margin-bottom: 5%;
   letter-spacing: 2px;
 }
@@ -755,7 +803,7 @@ section {
 }
 @media (max-width: 500px) {
   .dresscode .content h2 {
-    font-size: 8.4vw;
+    font-size: 8.8vw;
     letter-spacing: 0.4vw;
   }
   .dresscode .content .colors-grid .item .color .circle {
@@ -778,11 +826,11 @@ section {
   justify-content: center;
   text-align: center;
   width: 100%;
+  font-weight: bold;
 }
 .timeline .content .title {
   font-family: "UVNBUCTHU", sans-serif;
-  font-size: 42px;
-  font-weight: normal;
+  font-size: 44px;
   padding-bottom: 9%;
 }
 .timeline .content .timeline-list .event {
@@ -807,7 +855,7 @@ section {
 }
 @media (max-width: 500px) {
   .timeline .content .title {
-    font-size: 8.4vw;
+    font-size: 8.8vw;
   }
   .timeline .content .timeline-list .event .icon img {
     width: 6vw;
@@ -862,6 +910,7 @@ section {
 .our-story {
   width: 100%;
   margin-bottom: 6%;
+  font-weight: bold;
 }
 .our-story .divider {
   text-align: center;
@@ -880,7 +929,6 @@ section {
 .our-story .items .item h3.title {
   font-size: 14px;
   text-transform: uppercase;
-  font-weight: 300;
   position: relative;
   top: -1%;
 }
@@ -1153,11 +1201,11 @@ section {
   justify-content: center;
   text-align: center;
   margin-top: 10%;
+  font-weight: bold;
 }
 .rsvp h2.title {
   font-family: "UVNBUCTHU", sans-serif;
   font-size: 42px;
-  font-weight: normal;
   padding-bottom: 5%;
 }
 .rsvp .divider {
@@ -1165,10 +1213,14 @@ section {
 }
 .rsvp p.info-text {
   padding: 2% 0 4%;
+  font-size: 14px;
+  font-weight: 500;
 }
 .rsvp p.note-text {
   font-style: italic;
   margin-bottom: 5%;
+  font-size: 14px;
+  font-weight: 500;
 }
 .rsvp .button-group {
   display: flex;
@@ -1192,7 +1244,7 @@ section {
   font-family: "Cormorant Garamond", serif;
   font-size: 11px;
   line-height: 1;
-  font-weight: 300;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
@@ -1239,10 +1291,11 @@ section {
   border: 1px solid #806331;
   font-family: inherit;
   border-radius: 25px;
-  font-size: 12px;
+  font-size: 13px;
   color: #806331;
   background: #fff;
   transition: all 0.3s ease;
+  font-weight: 600;
 }
 .rsvp input:focus,
 .rsvp textarea:focus {
@@ -1256,7 +1309,7 @@ section {
 }
 .rsvp textarea::placeholder {
   margin: auto;
-  font-size: 10px;
+  font-size: 11px;
 }
 .rsvp textarea {
   resize: vertical;
@@ -1272,7 +1325,7 @@ section {
   line-height: 1;
   border-radius: 25px;
   background: transparent;
-  font-size: 12px;
+  font-size: 13px;
   color: rgba(124, 103, 66, 0.75);
   outline: none;
   border: 1px solid #806331;
@@ -1320,6 +1373,9 @@ section {
   .rsvp h2.title {
     font-size: 8.4vw;
   }
+  .rsvp p.info-text, .rsvp p.note-text {
+    font-size: 2.8vw;
+  }
   .rsvp .label-confirm {
     font-size: 2.4vw;
   }
@@ -1328,16 +1384,16 @@ section {
     letter-spacing: 0.2vw;
   }
   .rsvp input {
-    font-size: 2.4vw;
+    font-size: 2.6vw;
   }
   .rsvp textarea {
     font-size: 2.4vw;
   }
   .rsvp textarea::placeholder {
-    font-size: 2vw;
+    font-size: 2.2vw;
   }
   .rsvp .form-select {
-    font-size: 2.4vw;
+    font-size: 2.6vw;
     background-size: 1.8vw;
   }
   .rsvp .submit-btn {
@@ -1364,7 +1420,7 @@ section {
   object-fit: cover;
 }
 .footer p.thanks {
-  padding: 0 10%;
+  padding: 0 8%;
   text-align: justify;
   text-align-last: center;
 }

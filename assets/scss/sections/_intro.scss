@@ -13,6 +13,7 @@
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
+        font-weight: bold;
 
         .invitation {
             width: 100%;
@@ -56,9 +57,8 @@
 
                 h2 {
                     font-family: $font-hero;
-                    font-size: 42px;
+                    font-size: 48px;
                     letter-spacing: 1.2px;
-                    font-weight: 300;
                     margin: 4% 0;
                 }
 
@@ -84,12 +84,11 @@
                 padding: 4% 0;
 
                 h2 {
-                    font-size: 28px;
-                    font-weight: 300;
+                    font-size: 32px;
                 }
 
                 .subtime {
-                    font-size: 13px;
+                    font-size: 14px;
                 }
             }
 
@@ -119,7 +118,7 @@
     
                 .couple-names {
                     h2 {
-                        font-size: calc((42 / 500) * 100vw);
+                        font-size: calc((48 / 500) * 100vw);
                         letter-spacing: calc((1.2 / 500) * 100vw);
                     }
 
@@ -136,11 +135,11 @@
 
                 .top-detail {
                     h2 {
-                        font-size: calc((28 / 500) * 100vw);
+                        font-size: calc((32 / 500) * 100vw);
                     }
 
                     .subtime {
-                        font-size: calc((13 / 500) * 100vw);
+                        font-size: calc((14 / 500) * 100vw);
                     }
                 }
 
@@ -157,6 +156,7 @@
     .content {
         width: 100%;
         text-align: center;
+        font-weight: bold;
 
         .invitation-text {
             padding: 12% 0;
@@ -170,7 +170,6 @@
         .time {
             h2 {
                 font-size: 28px;
-                font-weight: 300;
                 margin: 1%;
 
                 span {
@@ -202,11 +201,14 @@
     
             .location-name {
                 font-family: $font-hero;
-                font-size: 42px;
+                font-size: 44px;
                 line-height: 1.2;
-                font-weight: 300;
                 letter-spacing: 1.2px;
                 margin-bottom: 2%;
+            }
+
+            .address-info {
+                font-size: 14px;
             }
     
             .map-link {
@@ -228,7 +230,7 @@
         .content {
             .time {
                 h2 {
-                    font-size: calc((24 / 500) * 100vw);
+                    font-size: calc((28 / 500) * 100vw);
                     span {
                         font-size: calc((26 / 500) * 100vw);
                     }
@@ -243,8 +245,12 @@
                 }
 
                 .location-name {
-                    font-size: calc((42 / 500) * 100vw);
+                    font-size: calc((44 / 500) * 100vw);
                     letter-spacing: calc((1.2 / 500) * 100vw);
+                }
+
+                .address-info {
+                    font-size: calc((14 / 500) * 100vw);
                 }
             }
         }

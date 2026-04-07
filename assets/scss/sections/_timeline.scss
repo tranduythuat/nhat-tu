@@ -12,10 +12,10 @@
         justify-content: center;
         text-align: center;
         width: 100%;
+        font-weight: bold;
         .title {
             font-family: $font-hero;
-            font-size: 42px;
-            font-weight: normal;
+            font-size: 44px;
             padding-bottom: 9%;
         }
         .timeline-list {
@@ -52,7 +52,7 @@
     @media (max-width: 500px) {
         .content {
             .title {
-                font-size: calc((42 / 500) * 100vw);
+                font-size: calc((44 / 500) * 100vw);
             }
             .timeline-list {
                 .event {
