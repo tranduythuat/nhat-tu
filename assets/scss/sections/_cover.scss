@@ -18,6 +18,10 @@
             font-family: $font-hero;
             font-size: 44px;
             letter-spacing: 1.4px;
+            font-weight: 300;
+            &.nha-trai {
+                font-weight: 600;
+            }
         }
 
         .photo-frame {

@@ -353,6 +353,10 @@ section {
   font-family: "UVNBUCTHU", sans-serif;
   font-size: 44px;
   letter-spacing: 1.4px;
+  font-weight: 300;
+}
+.cover .content .names.nha-trai {
+  font-weight: 600;
 }
 .cover .content .photo-frame {
   max-width: 250px;
