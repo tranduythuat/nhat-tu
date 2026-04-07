@@ -572,37 +572,37 @@
     let isUserInteracting = false;
     let virtualY = window.scrollY;
 
-    // Detect user interaction
+    // detect user stop
     ["wheel", "touchstart", "mousedown", "keydown"].forEach(event => {
       window.addEventListener(event, () => {
         isUserInteracting = true;
       }, { passive: true });
     });
 
-    function autoScrollToBottom() {
-      const step = () => {
-        if (isUserInteracting) return;
+    const step = () => {
+      if (isUserInteracting) return;
 
-        const max = document.body.scrollHeight - window.innerHeight;
+      const max = document.body.scrollHeight - window.innerHeight;
+      const distance = max - virtualY;
 
-        if (virtualY < max) {
-          const distance = max - virtualY;
-          const speed = Math.min(distance * 0.005, 0.5);
+      // snap cuối → tránh giật
+      if (distance < 1) {
+        window.scrollTo(0, max);
+        return;
+      }
 
-          virtualY += speed;
+      // easing mượt
+      const speed = Math.min(distance * 0.01, 0.6);
 
-          window.scrollTo(0, virtualY);
-          requestAnimationFrame(step);
-        }
-      };
+      virtualY += speed;
+      window.scrollTo(0, virtualY);
 
       requestAnimationFrame(step);
-    }
+    };
 
-    // Run khi load xong
     window.addEventListener("load", () => {
       setTimeout(() => {
-        autoScrollToBottom();
+        requestAnimationFrame(step);
       }, 300);
     });
   </script>
