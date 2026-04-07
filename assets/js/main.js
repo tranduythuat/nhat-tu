@@ -768,74 +768,6 @@
     }
   }
 
-  function initAutoScroll() {
-    let animationFrameId = null;
-    let userInteracted = false;
-    const scrollSpeed = 0.07;
-    const shouldIgnoreInteraction = (event) => {
-      return event.target instanceof Element && Boolean(event.target.closest("#player-btn"));
-    };
-
-    const markInteracted = (event) => {
-      if (event && shouldIgnoreInteraction(event)) return;
-
-      userInteracted = true;
-
-      if (animationFrameId) {
-        window.cancelAnimationFrame(animationFrameId);
-        animationFrameId = null;
-      }
-    };
-
-    window.addEventListener("wheel", markInteracted, { passive: true, once: true });
-    window.addEventListener("touchstart", markInteracted, { passive: true, once: true });
-    window.addEventListener("keydown", markInteracted, { once: true });
-    window.addEventListener("mousedown", markInteracted, { once: true });
-
-    const startAutoScroll = () => {
-      if (userInteracted) return;
-      if (window.location.hash) return;
-      if (window.scrollY > 16) return;
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-      window.setTimeout(() => {
-        if (userInteracted) return;
-
-        let lastTimestamp = null;
-
-        const step = (timestamp) => {
-          if (userInteracted) return;
-
-          if (lastTimestamp === null) {
-            lastTimestamp = timestamp;
-          }
-
-          const delta = timestamp - lastTimestamp;
-          lastTimestamp = timestamp;
-
-          const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-
-          if (window.scrollY >= maxScroll) {
-            animationFrameId = null;
-            return;
-          }
-
-          window.scrollTo(0, Math.min(window.scrollY + delta * scrollSpeed, maxScroll));
-          animationFrameId = window.requestAnimationFrame(step);
-        };
-
-        animationFrameId = window.requestAnimationFrame(step);
-      }, 1000);
-    };
-
-    if (document.readyState === "complete") {
-      startAutoScroll();
-      return;
-    }
-
-    window.addEventListener("load", startAutoScroll, { once: true });
-  }
-
   /* ======================================================
        BOOTSTRAP
     ====================================================== */
@@ -853,7 +785,6 @@
     initTimeline();
     // initFAQ();
     initRSVP();
-    initAutoScroll();
     // startCountdown(new Date("2026-04-14T16:00:00"));
   }
 

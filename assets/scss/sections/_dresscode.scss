@@ -16,9 +16,13 @@
         h2 {
             font-size: 44px;
             font-family: $font-hero;
-            font-weight: 600;
+            font-weight: 300;
             margin-bottom: 5%;
             letter-spacing: 2px;
+
+            &.nha-trai {
+                font-weight: bold;
+            }
         }
 
         .subtext {

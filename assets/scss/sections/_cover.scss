@@ -10,7 +10,9 @@
         @include flex-center;
         flex-direction: column;
         color: #fff;
-        font-weight: bold;
+        &.nha-trai {
+            font-weight: bold;
+        }
 
         .names {
             font-family: $font-hero;

@@ -12,11 +12,18 @@
         justify-content: center;
         text-align: center;
         width: 100%;
-        font-weight: bold;
+        &.nha-trai {
+            font-weight: bold;
+        }
         .title {
             font-family: $font-hero;
             font-size: 44px;
             padding-bottom: 9%;
+            font-weight: 300;
+            &.nha-trai {
+                font-weight: bold;
+            }
+            
         }
         .timeline-list {
             .event {
@@ -33,6 +40,7 @@
                 p.time {
                     margin-bottom: .8%;
                     text-transform: uppercase;
+                    font-weight: bold;
                 }
                 &:nth-child(2) {
                     .icon {

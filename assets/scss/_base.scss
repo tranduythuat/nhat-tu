@@ -10,8 +10,8 @@
 body {
     font-family: $font-main;
     color: $primary-color;
-    font-size: $font-size-text;
     @include flex-center;
+   
 }
 
 .container {
@@ -22,6 +22,10 @@ body {
     box-shadow: $shadow-default;
     margin: 0;
     overflow: hidden;
+    font-size: $font-size-text;
+    &.nha-gai {
+        font-size: 12px;
+    }
 }
 
 /* music */
@@ -80,8 +84,12 @@ body {
 
 
 @media (max-width: 500px) {
-    body {
+    .container {
         font-size: calc((13 / 500) * 100vw);
+
+        &.nha-gai {
+            font-size: calc((12 / 500) * 100vw);
+        }
     }
 
     .music-box {

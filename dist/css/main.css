@@ -49,7 +49,6 @@
 body {
   font-family: "iCielBCOldStyle", sans-serif;
   color: #806331;
-  font-size: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,6 +62,10 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.513);
   margin: 0;
   overflow: hidden;
+  font-size: 13px;
+}
+.container.nha-gai {
+  font-size: 12px;
 }
 
 /* music */
@@ -121,8 +124,11 @@ body {
 }
 
 @media (max-width: 500px) {
-  body {
+  .container {
     font-size: 2.6vw;
+  }
+  .container.nha-gai {
+    font-size: 2.4vw;
   }
   .music-box {
     bottom: 2vw;
@@ -339,6 +345,8 @@ section {
   align-items: center;
   flex-direction: column;
   color: #fff;
+}
+.cover .content.nha-trai {
   font-weight: bold;
 }
 .cover .content .names {
@@ -405,6 +413,8 @@ section {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+}
+.intro .content.nha-trai {
   font-weight: bold;
 }
 .intro .content .invitation {
@@ -446,6 +456,10 @@ section {
   font-size: 48px;
   letter-spacing: 1.2px;
   margin: 4% 0;
+  font-weight: 300;
+}
+.intro .content .invitation .couple-names h2.nha-trai {
+  font-weight: bold;
 }
 .intro .content .invitation .couple-names .separator-text {
   font-size: 45px;
@@ -467,6 +481,10 @@ section {
 }
 .intro .content .invitation .top-detail h2 {
   font-size: 32px;
+  font-weight: 300;
+}
+.intro .content .invitation .top-detail h2.nha-trai {
+  font-weight: bold;
 }
 .intro .content .invitation .top-detail .subtime {
   font-size: 14px;
@@ -512,6 +530,9 @@ section {
 .location-time .content {
   width: 100%;
   text-align: center;
+  font-weight: 300;
+}
+.location-time .content.nha-trai {
   font-weight: bold;
 }
 .location-time .content .invitation-text {
@@ -524,6 +545,7 @@ section {
 .location-time .content .time h2 {
   font-size: 28px;
   margin: 1%;
+  font-weight: 300;
 }
 .location-time .content .time h2 span {
   font-size: 26px;
@@ -550,6 +572,7 @@ section {
   line-height: 1.2;
   letter-spacing: 1.2px;
   margin-bottom: 2%;
+  font-weight: 300;
 }
 .location-time .content .venue-details .address-info {
   font-size: 14px;
@@ -755,9 +778,12 @@ section {
 .dresscode .content h2 {
   font-size: 44px;
   font-family: "UVNBUCTHU", sans-serif;
-  font-weight: 600;
+  font-weight: 300;
   margin-bottom: 5%;
   letter-spacing: 2px;
+}
+.dresscode .content h2.nha-trai {
+  font-weight: bold;
 }
 .dresscode .content .subtext {
   letter-spacing: 1.2px;
@@ -826,12 +852,18 @@ section {
   justify-content: center;
   text-align: center;
   width: 100%;
+}
+.timeline .content.nha-trai {
   font-weight: bold;
 }
 .timeline .content .title {
   font-family: "UVNBUCTHU", sans-serif;
   font-size: 44px;
   padding-bottom: 9%;
+  font-weight: 300;
+}
+.timeline .content .title.nha-trai {
+  font-weight: bold;
 }
 .timeline .content .timeline-list .event {
   padding-bottom: 8%;
@@ -846,6 +878,7 @@ section {
 .timeline .content .timeline-list .event p.time {
   margin-bottom: 0.8%;
   text-transform: uppercase;
+  font-weight: bold;
 }
 .timeline .content .timeline-list .event:nth-child(2) .icon img {
   width: 35px;
@@ -910,6 +943,8 @@ section {
 .our-story {
   width: 100%;
   margin-bottom: 6%;
+}
+.our-story.nha-trai {
   font-weight: bold;
 }
 .our-story .divider {
@@ -931,6 +966,7 @@ section {
   text-transform: uppercase;
   position: relative;
   top: -1%;
+  font-weight: 300;
 }
 .our-story .items .item h3.title {
   padding-bottom: 2%;
