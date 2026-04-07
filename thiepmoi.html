@@ -572,9 +572,14 @@
     let isUserInteracting = false;
     let virtualY = window.scrollY;
 
+    const playerBtn = document.querySelector("#player-btn");
+
     // detect user stop
     ["wheel", "touchstart", "mousedown", "keydown"].forEach(event => {
-      window.addEventListener(event, () => {
+      window.addEventListener(event, (e) => {
+
+        if (playerBtn && (playerBtn === e.target || playerBtn.contains(e.target))) return;
+
         isUserInteracting = true;
       }, { passive: true });
     });
