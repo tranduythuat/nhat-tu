@@ -92,11 +92,19 @@
 
     btn.addEventListener("click", () => {
       if (!audio.src) return;
-      audio.paused ? audio.play() : audio.pause();
+      audio.paused ? tryPlayAudio(audio) : audio.pause();
     });
 
     audio.addEventListener("play", () => icon.classList.add("spin"));
     audio.addEventListener("pause", () => icon.classList.remove("spin"));
+  }
+
+  function tryPlayAudio(audio = qs("#audio")) {
+    if (!audio || !audio.src || !audio.paused) return Promise.resolve();
+
+    return audio.play().catch((error) => {
+      console.debug("Autoplay blocked:", error);
+    });
   }
 
   /* ======================================================
@@ -395,7 +403,7 @@
         {
           opacity: 0,
           y: 60,
-          duration: 0.6,
+          duration: 1,
           ease: "power2.out"
         },
         `-=1.2`
@@ -409,7 +417,7 @@
             scale: 0,
             rotation: -120,
             opacity: 0,
-            duration: 0.7,
+            duration: 1.5,
             ease: "back.out(1.6)"
           },
           "<0.2"
@@ -422,8 +430,8 @@
           time,
           {
             opacity: 0,
-            y: 20,
-            duration: 1,
+            x: -80,
+            duration: 1.5,
             ease: "power2.out"
           },
           "<0.4"
@@ -746,6 +754,69 @@
     }
   }
 
+  function initAutoScroll() {
+    let animationFrameId = null;
+    let userInteracted = false;
+    const scrollSpeed = 0.1;
+    const shouldIgnoreInteraction = (event) => {
+      return event.target instanceof Element && Boolean(event.target.closest("#player-btn"));
+    };
+
+    const markInteracted = (event) => {
+      if (event && shouldIgnoreInteraction(event)) return;
+
+      userInteracted = true;
+
+      if (animationFrameId) {
+        window.cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+    };
+
+    window.addEventListener("wheel", markInteracted, { passive: true, once: true });
+    window.addEventListener("touchstart", markInteracted, { passive: true, once: true });
+    window.addEventListener("keydown", markInteracted, { once: true });
+    window.addEventListener("mousedown", markInteracted, { once: true });
+
+    window.addEventListener("load", () => {
+      if (userInteracted) return;
+      if (window.location.hash) return;
+      if (window.scrollY > 16) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      window.setTimeout(() => {
+        if (userInteracted) return;
+
+        tryPlayAudio();
+
+        let lastTimestamp = null;
+
+        const step = (timestamp) => {
+          if (userInteracted) return;
+
+          if (lastTimestamp === null) {
+            lastTimestamp = timestamp;
+          }
+
+          const delta = timestamp - lastTimestamp;
+          lastTimestamp = timestamp;
+
+          const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+          if (window.scrollY >= maxScroll) {
+            animationFrameId = null;
+            return;
+          }
+
+          window.scrollTo(0, Math.min(window.scrollY + delta * scrollSpeed, maxScroll));
+          animationFrameId = window.requestAnimationFrame(step);
+        };
+
+        animationFrameId = window.requestAnimationFrame(step);
+      }, 1000);
+    }, { once: true });
+  }
+
   /* ======================================================
        BOOTSTRAP
     ====================================================== */
@@ -763,6 +834,7 @@
     initTimeline();
     // initFAQ();
     initRSVP();
+    initAutoScroll();
     // startCountdown(new Date("2026-04-14T16:00:00"));
   }
 
