@@ -771,7 +771,7 @@
   function initAutoScroll() {
     let animationFrameId = null;
     let userInteracted = false;
-    const scrollSpeed = 0.06;
+    const scrollSpeed = 0.08;
     const shouldIgnoreInteraction = (event) => {
       return event.target instanceof Element && Boolean(event.target.closest("#player-btn"));
     };
