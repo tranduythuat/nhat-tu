@@ -411,9 +411,20 @@
       <p class="text-end">Yên studio | Yên bề gia thất</p>
     </footer>
 
-    <button class="player" id="player-btn" aria-label="Play/Pause">
-      <img id="iconSvg" src="../assets/images/icons/cd.png" alt="Music Icon">
-    </button>
+    <div class="music-box">
+      <div class="label">
+        <div id="musicLabel" class="musicLabel">Bật nhạc</br> ở đây</div>
+      </div>
+      <div class="player" id="player-btn" aria-label="Play/Pause">
+        <svg id="iconSvg" alt="Music Icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 16 16" fill="#ffffff" class="">
+          <g fill="#f2ebd8ff" fill-rule="evenodd" clip-rule="evenodd">
+              <path d="M14 7h-1v2.5a2.5 2.5 0 1 0 1 2V7Zm-2.5 3a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3Z"></path>
+              <path d="m13.469 2.001l-8 .5L5 3v7.5a2.5 2.5 0 1 0 1 2V6.47l7-.438V7h1V2.5l-.531-.499ZM13 3.032V5.03l-7 .438V3.47l7-.438ZM3.5 11a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3Z"></path>
+          </g>
+        </svg>
+        <!-- <img id="iconSvg" src="assets/images/icons/cd.png" alt="Music Icon" /> -->
+      </div>
+    </div>
     <audio id="audio" preload="auto"
       src="https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/nhat-tu/Haley%20Reinhart%20-%20Can't%20Help%20Falling%20In%20Love%20(Official%20Audio).mp3"
       loop type="audio/mpeg"></audio>
